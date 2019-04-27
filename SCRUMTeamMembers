@@ -55,7 +55,7 @@ public class SCRUMTeamMembers {
 	}
 	public static void delete(String TeamName) {
 	
-		String updateSQL = "DELETE FROM SCRUMTeamMembers WHERE ProjectName=?";
+		String updateSQL = "DELETE FROM SCRUMTeamMembers WHERE TeamName=?";
 		
 		
 		try {
