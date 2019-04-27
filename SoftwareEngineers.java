@@ -20,7 +20,7 @@ public class SoftwareEngineers {
 	}
 	
 	public static void update(String EmployeeID , String FirstName, String LastName, String PhoneNumber, String Email, String HireDate) {
-	String updateSQL = "UPDATE SoftwareEngineers SET StartDate=?, EndDate=? WHERE EmployeeID=?";
+	String updateSQL = "UPDATE SoftwareEngineers SET FirstName=?, LastName=?, PhoneNumber=?, Email=?, HireDate=?  WHERE EmployeeID=?";
 		
 		try {
 			
