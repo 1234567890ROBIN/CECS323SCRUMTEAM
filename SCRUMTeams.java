@@ -19,7 +19,7 @@ public class SCRUMTeams {
 	}
 	
 	public static void update(String ProjectName , String TeamName, String TeamLeader, String FormDate) {
-		String updateSQL = "UPDATE SoftwareEngineers SET ProjectName=?, TeamLeader=?, FormDate=? WHERE TeamName=?";
+		String updateSQL = "UPDATE SCRUMTeams SET ProjectName=?, TeamLeader=?, FormDate=? WHERE TeamName=?";
 			
 			try {
 				
@@ -40,7 +40,7 @@ public class SCRUMTeams {
 	
 	public static void insert(String ProjectName , String TeamName, String TeamLeader, String FormDate) {
 
-		String updateSQL = "INSERT INTO SoftwareEngineers (ProjectName , TeamName, TeamLeader, FormDate) VALUES(?,?,?,?)";
+		String updateSQL = "INSERT INTO SCRUMTeams (ProjectName , TeamName, TeamLeader, FormDate) VALUES(?,?,?,?)";
 		
 		
 		try {
