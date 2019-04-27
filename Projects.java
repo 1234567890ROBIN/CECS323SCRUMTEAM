@@ -3,7 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
+
 
 public class Projects {
 	
@@ -19,9 +19,28 @@ public class Projects {
 		stmnt = statement;
 	}
 	
+	public static void update(String ProjectName, String StartDate, String EndDate) {
+	String updateSQL = "UPDATE Projects SET StartDate=?, EndDate=? WHERE ProjectName=?";
+		
+		try {
+			
+			PreparedStatement statement = conn.prepareStatement(updateSQL);
+			statement.setString(1, StartDate);
+			statement.setString(2, EndDate);
+			statement.setString(3, ProjectName);
+			statement.executeUpdate();
+		
+		}//end of try
+		catch(SQLException ex){
+			System.out.println("SQLException: " + ex.getMessage());
+			System.out.println("SQLState: " + ex.getSQLState());
+			System.out.println("VendorError: " + ex.getErrorCode());ex.printStackTrace();
+			}
+	}
+	
 	public static void insert(String ProjectName, String StartDate, String EndDate) {
-		Scanner in = new Scanner(System.in);
-		String updateSQL = "INSERT INTO example (ProjectName, StartDate, EndDate) VALUES(?,?,?)";
+
+		String updateSQL = "INSERT INTO Projects (ProjectName, StartDate, EndDate) VALUES(?,?,?)";
 		
 		
 		try {
@@ -41,7 +60,7 @@ public class Projects {
 		
 	}
 	public static void delete(String ProjectName) {
-		Scanner in = new Scanner(System.in);
+	
 		String updateSQL = "DELETE FROM Projects WHERE ProjectName=?";
 		
 		
@@ -61,7 +80,7 @@ public class Projects {
 	}
 	
 	public static void List() {
-		Scanner in = new Scanner(System.in);
+
 		String updateSQL = "SELECT * FROM Projects";
 		
 		
