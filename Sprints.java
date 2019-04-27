@@ -64,7 +64,7 @@ public class Sprints {
 	}
 	public static void delete(String SprintID) {
 	
-		String updateSQL = "DELETE FROM Sprints WHERE ProjectName=?";
+		String updateSQL = "DELETE FROM Sprints WHERE SprintID=?";
 		
 		
 		try {
